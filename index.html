@@ -70,7 +70,7 @@
         <div id="hasilArea" class="hidden mt-8 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
             <div id="areaCetak" class="space-y-6 bg-white p-4">
                 
-                <!-- Kop Surat Bersih (Baris Kedua Sudah Dihapus) -->
+                <!-- Kop Surat Bersih -->
                 <div class="flex items-center justify-between border-b-4 border-double border-black pb-4 mb-6">
                     <img src="logo-daerah.png" class="h-20 w-auto object-contain">
                     <div class="text-center flex-grow mx-4">
@@ -99,6 +99,7 @@
 
                 <p class="text-gray-600 text-xs text-center italic mt-4">"Selamat atas kelulusanmu! Semoga sukses meraih impian dan cita-cita di jenjang pendidikan yang lebih tinggi."</p>
                 
+                <!-- Bagian Tanda Tangan Kepala Sekolah Resmi -->
                 <div class="mt-12 flex justify-end">
                     <div class="text-center text-xs w-64 relative">
                         <p class="text-gray-900">Tawangharjo, 2 Juni 2026</p>
@@ -188,11 +189,13 @@
                 errorArea.classList.add('hidden');
                 hasilArea.classList.remove('hidden');
 
-                // Memasukkan data ke element HTML
+                // Memasukkan data ke element HTML secara sinkron
                 document.getElementById('resNama').innerText = ": " + siswa.nama.toUpperCase();
                 document.getElementById('resNisn').innerText = ": " + input;
                 document.getElementById('resTTL').innerText = ": " + siswa.ttl;
                 document.getElementById('resStatus').innerText = "LULUS";
+                document.getElementById('namaKepsek').innerText = "Miftachul Hidayati, S.Pd.";
+                document.getElementById('nipKepsek').innerText = "NIP. 198010122014092003";
 
                 const badge = document.getElementById('statusBadge');
                 badge.className = "text-center py-6 rounded-xl bg-green-50 border border-green-200 text-green-700";
