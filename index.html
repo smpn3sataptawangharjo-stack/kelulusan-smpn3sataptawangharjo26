@@ -16,12 +16,13 @@
 </head>
 <body class="bg-gray-50 font-sans antialiased">
 
+    <!-- Header / Kop Website Utama -->
     <header class="bg-blue-900 text-white py-6 px-4 shadow-lg border-b-4 border-yellow-500">
         <div class="max-w-4xl mx-auto flex flex-row items-center justify-between gap-4">
             <img src="logo-daerah.png" alt="Logo Kabupaten Grobogan" class="h-16 md:h-24 w-auto object-contain bg-white p-1 rounded">
             <div class="text-center flex-grow">
-                <h3 class="text-xs md:text-sm font-semibold tracking-wider text-yellow-400">PEMERINTAH KABUPATEN GROBOGAN</h3>
-                <h1 class="text-sm md:text-2xl font-bold mt-1 text-white">SD-SMP SATU ATAP NEGERI 3 TAWANGHARJO</h1>
+                <h3 class="text-xs md:text-base font-bold tracking-wider text-yellow-400">PEMERINTAH KABUPATEN GROBOGAN</h3>
+                <h1 class="text-sm md:text-2xl font-black mt-1 text-white tracking-wide">SD-SMP SATU ATAP NEGERI 3 TAWANGHARJO</h1>
                 <p class="text-[10px] md:text-xs text-blue-200 mt-1">Alamat: Desa Pulongrambe, Tawangharjo, Grobogan, Jawa Tengah 58191</p>
                 <p class="text-[10px] md:text-xs text-yellow-300">Pos-el: smpn3sataptawangharjo@gmail.com</p>
             </div>
@@ -31,6 +32,7 @@
 
     <main class="max-w-2xl mx-auto my-10 px-4">
         
+        <!-- PINTU GERBANG UTAMA: Input Sandi Sekolah -->
         <div id="gerbangSandi" class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 text-center no-print">
             <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 text-blue-600 font-bold text-xl">🔒</div>
             <h2 class="text-xl font-semibold text-gray-800 mb-1">Aplikasi Sistem Terkunci</h2>
@@ -46,6 +48,7 @@
             </div>
         </div>
 
+        <!-- FORM PENCARIAN NISN -->
         <div id="formNisn" class="hidden bg-white p-6 rounded-2xl shadow-md border border-gray-100 no-print">
             <h2 class="text-xl font-semibold text-gray-800 mb-2 text-center">Cek Status Kelulusan Mandiri</h2>
             <p class="text-sm text-gray-500 text-center mb-6">Silakan masukkan NISN resmi Anda pada kolom di bawah ini.</p>
@@ -53,7 +56,7 @@
             <div class="space-y-4">
                 <div>
                     <label for="nisnInput" class="block text-sm font-medium text-gray-700 mb-1">Masukkan NISN Siswa :</label>
-                    <input type="number" id="nisnInput" placeholder="Contoh: 1234567890" 
+                    <input type="number" id="nisnInput" placeholder="Contoh: 0117274836" 
                            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                 </div>
                 <button onclick="cekKelulusan()" 
@@ -63,16 +66,18 @@
             </div>
         </div>
 
+        <!-- AREA SKL DIGITAL -->
         <div id="hasilArea" class="hidden mt-8 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
             <div id="areaCetak" class="space-y-6 bg-white p-4">
                 
+                <!-- Kop Surat Bersih (Baris Kedua Sudah Dihapus) -->
                 <div class="flex items-center justify-between border-b-4 border-double border-black pb-4 mb-6">
                     <img src="logo-daerah.png" class="h-20 w-auto object-contain">
                     <div class="text-center flex-grow mx-4">
-                        <h4 class="font-bold text-xs md:text-sm text-black">PEMERINTAH KABUPATEN GROBOGAN</h4>
-                        <h3 class="font-bold text-sm md:text-lg text-black mt-0.5">SD-SMP SATU ATAP NEGERI 3 TAWANGHARJO</h3>
-                        <p class="text-[10px] text-gray-700">Alamat: Desa Pulongrambe, Tawangharjo, Grobogan, Jawa Tengah 58191</p>
-                        <p class="text-[10px] text-gray-700">Pos-el: smpn3sataptawangharjo@gmail.com</p>
+                        <h4 class="font-bold text-sm md:text-base text-black uppercase tracking-wide">PEMERINTAH KABUPATEN GROBOGAN</h4>
+                        <h3 class="font-black text-base md:text-xl text-black mt-1 uppercase tracking-wide">SD-SMP SATU ATAP NEGERI 3 TAWANGHARJO</h3>
+                        <p class="text-[11px] text-gray-800 mt-1">Alamat: Desa Pulongrambe, Tawangharjo, Grobogan, Jawa Tengah 58191</p>
+                        <p class="text-[11px] text-gray-800">Pos-el: smpn3sataptawangharjo@gmail.com</p>
                     </div>
                     <img src="logo-sekolah.png" class="h-20 w-auto object-contain">
                 </div>
@@ -102,9 +107,9 @@
                             <img src="ttd-stempel.png" alt="Tanda Tangan dan Stempel Kepala Sekolah" class="h-24 w-auto object-contain z-10">
                         </div>
                         <p class="font-bold text-gray-900 border-b border-gray-800 pb-0.5 inline-block min-w-[200px]" id="namaKepsek">
-                            Miftachul Hidayati, S.Pd.
+                            NAMA KEPALA SEKOLAH, S.Pd.
                         </p>
-                        <p class="text-gray-900 mt-1" id="nipKepsek">NIP. 198010122014092003</p>
+                        <p class="text-gray-900 mt-1" id="nipKepsek">NIP. 197XXXXXXXXXXXXXXX</p>
                     </div>
                 </div>
             </div>
