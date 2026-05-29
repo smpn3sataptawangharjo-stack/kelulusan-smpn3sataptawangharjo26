@@ -94,7 +94,7 @@
                     <h4 class="text-2xl font-black tracking-widest" id="resStatus">-</h4>
                 </div>
 
-                <p class="text-gray-600 text-xs text-center italic mt-4" id="resPesan"></p>
+                <p class="text-gray-600 text-xs text-center italic mt-4">"Selamat atas kelulusanmu! Semoga sukses meraih impian dan cita-cita di jenjang pendidikan yang lebih tinggi."</p>
                 
                 <div class="mt-12 flex justify-end">
                     <div class="text-center text-xs w-64 relative">
@@ -127,8 +127,35 @@
         &copy; 2026 Tim IT SD-SMP Satu Atap Negeri 3 Tawangharjo. All Rights Reserved.
     </footer>
 
-    <script src="data.js"></script>
     <script>
+        // DATA MASTER RESMI KELULUSAN (24 SISWA)
+        const databaseSiswa = {
+            "0117274836": { nama: "ALDO ARIF EFENDI", ttl: "Grobogan, 5 Februari 2011" },
+            "0111563011": { nama: "ALFIAN FAIS AL FARIZI", ttl: "Grobogan, 13 November 2011" },
+            "0113522150": { nama: "AMANDA AULIA PUTRI", ttl: "Grobogan, 19 Agustus 2011" },
+            "0109993284": { nama: "ARJUNA AKBAR MAULANA", ttl: "Grobogan, 12 November 2010" },
+            "0097431510": { nama: "BAGAS SAPUTRA", ttl: "Grobogan, 14 Desember 2009" },
+            "0116041003": { nama: "BERKAH AJI PRASETIYO", ttl: "Grobogan, 30 Mei 2011" },
+            "0102140515": { nama: "BIMA SAPUTRA", ttl: "Grobogan, 29 April 2010" },
+            "0118006823": { nama: "BUDI IRWANSYAH", ttl: "Grobogan, 30 Juli 2011" },
+            "0106694094": { nama: "DONA AGNESIA", ttl: "Grobogan, 13 September 2010" },
+            "0117248303": { nama: "FAHMI FIRMANSYAH", ttl: "Grobogan, 4 Juni 2011" },
+            "0128531253": { nama: "GILANG PERMANA PUTRA", ttl: "Grobogan, 6 Januari 2012" },
+            "0114232593": { nama: "HANIF MAULANA", ttl: "Grobogan, 12 Desember 2011" },
+            "0112234589": { nama: "IKHSAN NAWAWI", ttl: "Grobogan, 30 April 2011" },
+            "0113043487": { nama: "JEZTA YUTAVINO", ttl: "Grobogan, 18 Agustus 2011" },
+            "0114981513": { nama: "LAILATUS SALAMAH", ttl: "Grobogan, 22 Mei 2011" },
+            "0117762846": { nama: "MELANI NURUL INSANI", ttl: "Grobogan, 25 April 2011" },
+            "0118821042": { nama: "MEXZA IFANA SUSANTI", ttl: "Grobogan, 22 Mei 2011" },
+            "0114398283": { nama: "MOCH RULLY DHIKA PRASTEYO", ttl: "Grobogan, 26 Maret 2011" },
+            "0112063232": { nama: "MUHAMMAD MARSELLINO REFANDI", ttl: "Grobogan, 21 Maret 2011" },
+            "0117484844": { nama: "MUHAMMAD MAULANA TAFFA", ttl: "Grobogan, 12 Juli 2011" },
+            "0101974084": { nama: "OKY DWI KUSUMA WIJAYANTI", ttl: "Grobogan, 3 Oktober 2010" },
+            "0116636596": { nama: "RAHMAT MAULANA IBRAHIM", ttl: "Grobogan, 2 April 2011" },
+            "0119914799": { nama: "WISNU PUTRA ARDIANSYAH", ttl: "Grobogan, 8 November 2011" },
+            "0117368201": { nama: "YESICA OKTAVIANA PUTRI", ttl: "Grobogan, 26 Oktober 2011" }
+        };
+
         // Fungsi Verifikasi Sandi Utama
         function verifikasiSandi() {
             const inputSandi = document.getElementById('sandiSekolah').value;
@@ -142,7 +169,7 @@
             }
         }
 
-        // Fungsi Membaca dan Memecah Data Kelulusan Siswa
+        // Fungsi Membaca Pencarian NISN
         function cekKelulusan() {
             const input = document.getElementById('nisnInput').value.trim();
             const hasilArea = document.getElementById('hasilArea');
@@ -153,25 +180,19 @@
                 return;
             }
 
-            // Membaca dataKelulusan dari data.js
-            if (dataKelulusan && dataKelulusan[input]) {
-                const siswa = dataKelulusan[input];
+            if (databaseSiswa[input]) {
+                const siswa = databaseSiswa[input];
                 errorArea.classList.add('hidden');
                 hasilArea.classList.remove('hidden');
 
-                // Memasukkan data ke element HTML secara rapi
+                // Memasukkan data ke element HTML
                 document.getElementById('resNama').innerText = ": " + siswa.nama.toUpperCase();
-                document.getElementById('resNisn').innerText = ": " + siswa.nisn;
+                document.getElementById('resNisn').innerText = ": " + input;
                 document.getElementById('resTTL').innerText = ": " + siswa.ttl;
-                document.getElementById('resStatus').innerText = siswa.status;
-                document.getElementById('resPesan').innerText = `"${siswa.pesan}"`;
+                document.getElementById('resStatus').innerText = "LULUS";
 
                 const badge = document.getElementById('statusBadge');
-                if (siswa.status.toUpperCase() === "LULUS") {
-                    badge.className = "text-center py-6 rounded-xl bg-green-50 border border-green-200 text-green-700";
-                } else {
-                    badge.className = "text-center py-6 rounded-xl bg-red-50 border border-red-200 text-red-700";
-                }
+                badge.className = "text-center py-6 rounded-xl bg-green-50 border border-green-200 text-green-700";
             } else {
                 hasilArea.classList.add('hidden');
                 errorArea.classList.remove('hidden');
